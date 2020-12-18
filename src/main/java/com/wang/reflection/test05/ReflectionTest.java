@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -14,6 +13,17 @@ import java.lang.reflect.Method;
  * @version 1.0
  * @date 2020/12/17 21:53
  */
+/*
+疑问1:通过直接new的方式或反射的方式都可以调用公共的结构,开发中到底是用哪个?
+建议:直接new的方式
+
+疑问2:什么时候会用反射的方式?
+答:反射的特征是动态性,需要用到动态性的时候使用反射
+
+疑问3:反射机制与面向对象中的封装性是不是矛盾?如何看待两个技术?
+答:不矛盾.
+ */
+
 public class ReflectionTest {
 
     //反射之前对于Person类的操作
@@ -77,5 +87,15 @@ public class ReflectionTest {
         String china = (String) showNation.invoke(person2,"China"); //相当于person2.showNation("China")
         System.out.println(china);
     }
+    /*
+    关于java.lang.Class类的理解
+    1.类的加载过程:
+    程序经过javac.exe命令以后,会生成一个或多个字节码文件(.class结尾).
+    接着我们使用java.exe命令对某个字节码文件进行解释运行,相当于将某个字节码文件加载到内存中,此过程称为类的加载
+    加载到内存中的类,我们称为运行时类,此运行时类,就作为Class的一个实例.
+
+    2.换而言之,Class的实例就对应着一个运行时类
+    3.加载到内存中的运行时类,会缓存一定时间,在此时间内,可以通过不同的方式来获取此运行时类
+     */
 
 }

@@ -7,6 +7,9 @@ import java.lang.annotation.ElementType;
  * @version 1.0
  * @date 2020/12/17 21:04
  */
+/*
+Class实例可以是哪些结构的说明:
+ */
 public class Test04 {
     public static void main(String[] args) {
         Class c1 = Object.class; //类
