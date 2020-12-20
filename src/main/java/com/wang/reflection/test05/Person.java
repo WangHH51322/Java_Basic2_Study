@@ -11,6 +11,7 @@ public class Person {
     public Integer age;
 
     public Person() {
+        System.out.println("这是一个空参构造器");
     }
 
     public Person(String name, Integer age) {
