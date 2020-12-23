@@ -15,7 +15,7 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
     public Person(){}
 
     @MyAnnotation("abc")
-    public Person(String name){
+    Person(String name){
         this.name = name;
     }
 
