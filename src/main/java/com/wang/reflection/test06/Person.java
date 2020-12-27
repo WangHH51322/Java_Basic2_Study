@@ -24,6 +24,10 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
         this.age = age;
     }
 
+    private Person(int age) {
+        this.age = age;
+    }
+
     @MyAnnotation
     private String show(String nation){
         System.out.println("我的国籍是:" + nation);
@@ -42,5 +46,14 @@ public class Person extends Creature<String> implements Comparable<String>, MyIn
     @Override
     public int compareTo(String o) {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
     }
 }
